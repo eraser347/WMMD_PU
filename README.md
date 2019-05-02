@@ -1,6 +1,6 @@
 ## Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric
 
-PyTorch based implementation of the paper "Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric" authored by Yongchan Kwon, Wonyoung Kim, Masashi Sugiyama, and Myunghee Cho Paik. This github is created for the ACML 2019 journal review. [ArXiv](https://arxiv.org/abs/1901.09503)
+PyTorch based implementation of the paper "Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric" authored by Yongchan Kwon, Wonyoung Kim, Masashi Sugiyama, and Myunghee Cho Paik. This github is created for the ACML 2019 journal review. [[ArXiv]](https://arxiv.org/abs/1901.09503)
 
 
 
