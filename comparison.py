@@ -166,9 +166,9 @@ def plot_acc_n_u(pi_plus, n_u_set, acc_array_wmmd, outfile='acc_n_u.pdf'):
     
 
     #define axis
-    plt.figure(figsize=(10,6))
-    plt.xlabel(r"$n_u$: Unlabeled sample size", fontsize=22)
-    plt.ylabel("Accuracy (%)", fontsize=22)
+    plt.figure(figsize=(7,5))
+    plt.xlabel(r"$n_u$: Unlabeled sample size", fontsize=15)
+    plt.ylabel("Accuracy (%)", fontsize=15)
 
     #calculate Bayes risk
     mu_p = np.array([1,1])/np.sqrt(2)
@@ -184,15 +184,11 @@ def plot_acc_n_u(pi_plus, n_u_set, acc_array_wmmd, outfile='acc_n_u.pdf'):
 
     #plot WMMD accuracy
     n_repeat = acc_array_wmmd.shape[0]
-    plt.errorbar(n_u_set, 100*(np.mean(acc_array_wmmd, axis=0)), 
-                 yerr = 100*np.std(acc_array_wmmd, axis=0)/np.sqrt(n_repeat), 
-                 capsize=5, color = 'dodgerblue',
-                 label='WMMD'
-                )
-
+    ymean = 100*(np.mean(acc_array_wmmd, axis=0))
+    yerr = 100*np.std(acc_array_wmmd, axis=0)/np.sqrt(n_repeat)
+    plt.plot(n_u_set, ymean, marker='o', color='dodgerblue', label='WMMD') 
+    plt.fill_between(n_u_set, ymean-yerr, ymean+yerr, alpha=0.2, edgecolor='dodgerblue', facecolor='dodgerblue')
     plt.legend(loc='lower right', borderaxespad=0., fontsize=13)
-    plt.yticks(fontsize=12)
-    plt.xticks(fontsize=12)
     plt.savefig(outfile, dpi=200, bbox_inches='tight', pad_inches=0)
     print('The result plot saved at {}'.format(outfile))
 
@@ -201,9 +197,9 @@ def plot_acc_pi_plus(pi_plus_set, acc_array_wmmd, outfile='acc_pi_plus.pdf'):
     # Input: pi_plus, n_u_set, acc_array_wmmd[n_repeat, len(n_u_set)], outfile
     
     #define axis
-    plt.figure(figsize=(7,6))
-    plt.xlabel(r"$\pi_{+}$: Class-prior", fontsize=18)
-    plt.ylabel("Accuracy (%)", fontsize=18)
+    plt.figure(figsize=(7,5))
+    plt.xlabel(r"$\pi_{+}$: Class-prior", fontsize=15)
+    plt.ylabel("Accuracy (%)", fontsize=15)
 
     #calculate Bayes risk
     mu_p = np.array([1,1])/np.sqrt(2)
@@ -221,14 +217,11 @@ def plot_acc_pi_plus(pi_plus_set, acc_array_wmmd, outfile='acc_pi_plus.pdf'):
 
     #plot WMMD accuracy
     n_repeat = acc_array_wmmd.shape[0]
-    plt.errorbar(pi_plus_set, 100*(np.mean(acc_array_wmmd, axis=0)), 
-                 yerr = 100*np.std(acc_array_wmmd, axis=0)/np.sqrt(n_repeat), 
-                 capsize=5, color = 'dodgerblue',
-                 label='WMMD'
-                )
+    ymean = 100*(np.mean(acc_array_wmmd, axis=0))
+    yerr = 100*np.std(acc_array_wmmd, axis=0)/np.sqrt(n_repeat)
+    plt.plot(pi_plus_set, ymean, marker='o', color='dodgerblue', label='WMMD') 
+    plt.fill_between(pi_plus_set, ymean-yerr, ymean+yerr, alpha=0.2, edgecolor='dodgerblue', facecolor='dodgerblue')
 
-    plt.yticks(fontsize=12)
-    plt.xticks(fontsize=12)
     plt.legend(loc='upper center', borderaxespad=0., fontsize=15)
     plt.savefig(outfile, dpi=200, bbox_inches='tight', pad_inches=0)
     print('The result plot saved at {}'.format(outfile))
@@ -239,21 +232,18 @@ def plot_AUC_n_u(pi_plus, n_u_set, AUC_array_wmmd, outfile='AUC_n_u.pdf'):
     # Input: pi_plus, n_u_set, acc_array_wmmd[n_repeat, len(n_u_set)], outfile
     
     #define axis
-    plt.figure(figsize=(10,6))
-    plt.xlabel(r"$n_u$: Unlabeled sample size", fontsize=22)
-    plt.ylabel(r"AUC $\times 100$", fontsize=22)
+    plt.figure(figsize=(7,5))
+    plt.xlabel(r"$n_u$: Unlabeled sample size", fontsize=15)
+    plt.ylabel(r"AUC $\times 100$", fontsize=15)
 
     #plot WMMD accuracy
     n_repeat = AUC_array_wmmd.shape[0]
-    plt.errorbar(n_u_set, 100*(np.mean(AUC_array_wmmd, axis=0)), 
-                 yerr = 100*np.std(AUC_array_wmmd, axis=0)/np.sqrt(n_repeat), 
-                 capsize=5, color = 'dodgerblue',
-                 label='WMMD'
-                )
+    ymean = 100*(np.mean(AUC_array_wmmd, axis=0))
+    yerr = 100*np.std(AUC_array_wmmd, axis=0)/np.sqrt(n_repeat)
+    plt.plot(n_u_set, ymean, marker='o', color='dodgerblue', label='WMMD') 
+    plt.fill_between(n_u_set, ymean-yerr, ymean+yerr, alpha=0.2, edgecolor='dodgerblue', facecolor='dodgerblue')
 
-    plt.legend(loc='lower right', borderaxespad=0., fontsize=15)
-    plt.yticks(fontsize=12)
-    plt.xticks(fontsize=12)
+    plt.legend(loc='lower right', borderaxespad=0.)
     plt.savefig(outfile, dpi=200, bbox_inches='tight', pad_inches=0)
     print('The result plot saved at {}'.format(outfile))
 
@@ -263,21 +253,18 @@ def plot_AUC_pi_plus(pi_plus_set, AUC_array_wmmd, outfile='AUC_pi_plus.pdf'):
     # Input: pi_plus, n_u_set, acc_array_wmmd[n_repeat, len(n_u_set)], outfile
     
     #define axis
-    plt.figure(figsize=(10,6))
-    plt.xlabel(r"$\pi_{+}$: Class-prior", fontsize=22)
-    plt.ylabel(r"AUC $\times 100$", fontsize=22)
+    plt.figure(figsize=(7,5))
+    plt.xlabel(r"$\pi_{+}$: Class-prior", fontsize=15)
+    plt.ylabel(r"AUC $\times 100$", fontsize=15)
 
     #plot WMMD accuracy
     n_repeat = AUC_array_wmmd.shape[0]
-    plt.errorbar(pi_plus_set, 100*(np.mean(AUC_array_wmmd, axis=0)), 
-                 yerr = 100*np.std(AUC_array_wmmd, axis=0)/np.sqrt(n_repeat), 
-                 capsize=5, color = 'dodgerblue',
-                 label='WMMD'
-                )
+    ymean = 100*(np.mean(AUC_array_wmmd, axis=0))
+    yerr = 100*np.std(AUC_array_wmmd, axis=0)/np.sqrt(n_repeat)
+    plt.plot(pi_plus_set, ymean, marker='o', color='dodgerblue', label='WMMD') 
+    plt.fill_between(pi_plus_set, ymean-yerr, ymean+yerr, alpha=0.2, edgecolor='dodgerblue', facecolor='dodgerblue')
 
-    plt.legend(loc='lower left', borderaxespad=0., fontsize=15)
-    plt.yticks(fontsize=12)
-    plt.xticks(fontsize=12)
+    plt.legend(loc='lower left', borderaxespad=0.)
     plt.savefig(outfile, dpi=200, bbox_inches='tight', pad_inches=0)
     print('The result plot saved at {}'.format(outfile))
 

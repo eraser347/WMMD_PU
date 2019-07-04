@@ -73,20 +73,20 @@ def process_args():
         if args.filename == None:
             args.filename = 'figure2a.pdf'
     elif args.preset == 'figure2b':
-        args.mode = 'AUC_n_u'
+        args.mode = 'accuracy_pi_plus'
         args.positive = 100
-        args.unlabeled = [40, 501, 20]
-        args.classprior = [0.5]
+        args.unlabeled = [400]
+        args.classprior = [0.05, 1, 0.05]
         args.gammalist = [1, 0.4, 0.2, 0.1, 0.05]
         args.replication = 100
         args.testsamples = 1000
         if args.filename == None:
             args.filename = 'figure2b.pdf'
     elif args.preset == 'figure2c':
-        args.mode = 'accuracy_pi_plus'
+        args.mode = 'AUC_n_u'
         args.positive = 100
-        args.unlabeled = [400]
-        args.classprior = [0.05, 1, 0.05]
+        args.unlabeled = [40, 501, 20]
+        args.classprior = [0.5]
         args.gammalist = [1, 0.4, 0.2, 0.1, 0.05]
         args.replication = 100
         args.testsamples = 1000
