@@ -55,10 +55,10 @@ python main.py -p 'figure1' -d './example_figures/' -f 'my_best_figure.pdf'
 
 The available preset plots are:
 - Figure1: An illustration of the WMMD decision boundary with `two_moons` dataset.
-- Figure2a: A plot of accuracy on various class-prior.
-- Figure2b: A plot of AUC on various class-prior.
-- Figure2c: A plot of accuracy on various unlabeled sample size.
-- Figure2d: A plot of AUC on various unlabeled sample size.
+- Figure2a: A plot of accuracy on various unlabeled sample size.
+- Figure2b: A plot of accuracy on various class-prior.
+- Figure2c: A plot of AUC on various unlabeled sample size.
+- Figure2d: A plot of AUC on various class-prior.
 
 For the configuration of GPU, add `-g` option with zero-origin GPU ID.
 ```bash
@@ -72,10 +72,10 @@ python main.py -p 'figure1' -P 10 -U 50 -g 0
 - `figure2a.jpg`: a plot of accuracy on various unlabeled sample size.
 <img src="./example_figures/figure2a.jpg" width="400">
 
-- `figure2b.jpg`: a plot of AUC on various unlabeled sample size.
+- `figure2b.jpg`: a plot of accuracy on various class-prior.
 <img src="./example_figures/figure2b.jpg" width="400">
 
-- `figure2c.jpg`: a plot of accuracy on various class-prior.
+- `figure2c.jpg`: a plot of AUC on various unlabeled sample size.
 <img src="./example_figures/figure2c.jpg" width="400">
 
 - `figure2d.jpg`: a plot of AUC on various class-prior.
