@@ -1,6 +1,6 @@
 ## Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric
 
-PyTorch based implementation of the paper "Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric" accepted at the journal track of [ACML2019](http://www.acml-conf.org/2019/conference/accepted-papers/). In this repository, you can generate Tables and Figures of the paper!
+PyTorch based implementation of the paper ["Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric"](https://arxiv.org/abs/1901.09503) accepted at the journal track of [ACML2019](http://www.acml-conf.org/2019/conference/accepted-papers/). In this repository, you can generate Tables and Figures of the paper!
 
 ## Directory tree
 
