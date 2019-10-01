@@ -102,5 +102,6 @@ You can use `-m` options to generate one of the below plots:
 ## Author
 
 Wonyoung Kim, Ph.D. student, Department of Statistics, Seoul National University
+
 Yongchan Kwon, Ph.D. student, Department of Statistics, Seoul National University
 
