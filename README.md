@@ -1,6 +1,6 @@
 ## Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric
 
-PyTorch based implementation of the paper "Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric". This github is created for the ACML 2019 journal review.
+PyTorch based implementation of the paper "Principled analytic classifier for positive-unlabeled learning via weighted integral probability metric" accepted at the journal track of [ACML2019](http://www.acml-conf.org/2019/conference/accepted-papers/). In this repository, you can generate Tables and Figures of the paper!
 
 ## Directory tree
 
@@ -96,4 +96,11 @@ You can use `-m` options to generate one of the below plots:
 - `illustraion_moons`: An illustration of the WMMD decision boundary with `two_moons` dataset.
 
 --->
+
+
+
+## Author
+
+Wonyoung Kim, Ph.D. student, Department of Statistics, Seoul National University
+Yongchan Kwon, Ph.D. student, Department of Statistics, Seoul National University
 
